@@ -6,48 +6,47 @@ type Turn = { role: 'bot' | 'user'; text: string }
 const script: Turn[] = [
   {
     role: 'bot',
-    text: 'Hi — I’m the BOTS Pharma assistant. Are you looking for vitamins, minerals, or herbal extracts today?',
+    text: 'Hi — I\'m the BOTS Pharma assistant. Are you looking for vitamins, minerals, or herbal extracts today?',
   },
   { role: 'user', text: 'We need collagen peptides for a new supplement line in MENA.' },
   {
     role: 'bot',
-    text: 'Great. I’ll route you to specs, MOQs, and a quote path. One moment while I sync with inventory…',
+    text: 'Great. I\'ll route you to specs, MOQs, and a quote path. One moment while I sync with inventory…',
   },
-  {
-    role: 'user',
-    text: 'Also send coa-friendly documentation if available.',
-  },
+  { role: 'user', text: 'Also send coa-friendly documentation if available.' },
   {
     role: 'bot',
-    text: 'Noted. I’ve tagged your request for COA packs. A specialist will follow up with validated docs.',
+    text: 'Noted. I\'ve tagged your request for COA packs. A specialist will follow up with validated docs.',
   },
 ]
 
 export function ChatbotDemo() {
-  const [visible, setVisible] = useState(0)
-  const [reducedMotion, setReducedMotion] = useState(false)
+  // Lazy init reads matchMedia synchronously on first render — no effect needed for the initial value.
+  const [reducedMotion, setReducedMotion] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  )
+  const [cycleIndex, setCycleIndex] = useState(0)
 
+  // Effect only handles the *change* event — a real subscription, not a state sync.
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
-    setReducedMotion(mq.matches)
     const fn = () => setReducedMotion(mq.matches)
     mq.addEventListener('change', fn)
     return () => mq.removeEventListener('change', fn)
   }, [])
 
+  // Effect only starts/stops the interval; the interval callback (an event, not render) is where setState belongs.
   useEffect(() => {
-    if (reducedMotion) {
-      setVisible(script.length)
-      return
-    }
-    setVisible(0)
+    if (reducedMotion) return
     const id = window.setInterval(() => {
-      setVisible((v) => (v >= script.length ? 0 : v + 1))
+      setCycleIndex((v) => (v + 1) % script.length)
     }, 3200)
     return () => clearInterval(id)
   }, [reducedMotion])
 
-  const shown = script.slice(0, visible)
+  // Derived during render instead of synced via setState in an effect.
+  const visible = reducedMotion ? script.length - 1 : cycleIndex
+  const shown = script.slice(0, visible + 1)
 
   return (
     <section className="section" id="automation">
@@ -83,10 +82,6 @@ export function ChatbotDemo() {
                 </div>
               ))}
             </div>
-            <p className="chat-mock__note">
-              Not a live capture of botspharma.com — a motion prototype for your
-              portfolio. Replace with a screen recording when you have one.
-            </p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

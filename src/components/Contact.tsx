@@ -49,11 +49,6 @@ export function Contact() {
       <div className="shell">
         <p className="section__label">Contact</p>
         <h2 className="section__title">Let&apos;s build the next release.</h2>
-        <p className="section__desc">
-          Share a short brief: timeline, stack, and what success looks like. This
-          form posts to a small Hono API (validated with Zod) — ready to swap for
-          email or CRM webhooks.
-        </p>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}

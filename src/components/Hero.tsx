@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 
 const img =
-  'https://images.unsplash.com/photo-1497215842969-222cb4301878?w=1200&q=80&auto=format&fit=crop'
+  'https://oz21ot1xfsvjumll.private.blob.vercel-storage.com/760d380f79a60a8c4fc0bc3adaf47380_1.jpg?vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfT1oyMU90MXhGU3ZqVU1sbCIsIm93bmVySWQiOiJ0ZWFtXzNPUlFUQUY5S0oySkFzRDBUVm1CNGVnWCIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzg4MDcwNDk3OTE2LCJpYXQiOjE3ODgwMjcyOTgwNzh9.1SQYGQ8bkjY9ta36ci7S-gGky1S__G8W90-9YRG_OOY&vercel-blob-signature=pUU0AaOt0ab0TbVpweL6R3v6lNYEDcQVWuxgyQ40do8'
 
 const container = {
   hidden: { opacity: 0 },
@@ -39,14 +39,13 @@ export function Hero() {
               <br />&amp; intelligent automation.
             </motion.h1>
             <motion.p className="hero__lead" variants={item}>
-              I&apos;m <strong style={{ color: 'var(--text-strong)' }}>Zeyad Khaled</strong>
-              — I ship modern interfaces and connect them to reliable AI workflows
+              I ship modern interfaces and connect them to reliable AI workflows
               so products feel fast, clear, and human.
             </motion.p>
             <motion.div className="hero__meta" variants={item}>
-              <span>WordPress · since 2023</span>
-              <span>React &amp; design systems</span>
-              <span>n8n · Python</span>
+              <span>WordPress</span>
+              <span>Advanced Web Development</span>
+              <span>AI Automation · n8n · Python </span>
             </motion.div>
           </motion.div>
           <motion.div

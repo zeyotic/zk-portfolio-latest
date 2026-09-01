@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 
 const img =
-  'https://oz21ot1xfsvjumll.private.blob.vercel-storage.com/760d380f79a60a8c4fc0bc3adaf47380_1.jpg?vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfT1oyMU90MXhGU3ZqVU1sbCIsIm93bmVySWQiOiJ0ZWFtXzNPUlFUQUY5S0oySkFzRDBUVm1CNGVnWCIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzg4MDcwNDk3OTE2LCJpYXQiOjE3ODgwMjcyOTgwNzh9.1SQYGQ8bkjY9ta36ci7S-gGky1S__G8W90-9YRG_OOY&vercel-blob-signature=pUU0AaOt0ab0TbVpweL6R3v6lNYEDcQVWuxgyQ40do8'
+  'https://lh3.googleusercontent.com/d/1pD9MwBj7gu58IBeGqGBzBvs-Lj3IQGph'
 
 const container = {
   hidden: { opacity: 0 },

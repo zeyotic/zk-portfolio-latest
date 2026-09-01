@@ -18,7 +18,7 @@ export function Showcase() {
   return (
     <section className="section" id="work">
       <div className="shell">
-        <p className="section__label">Selected work</p>
+        <p className="section__label">Portfolio</p>
         <h2 className="section__title">Live products &amp; client ecosystems.</h2>
         <p className="section__desc">
           A snapshot of public-facing work: health-industry automation on the web,
@@ -43,10 +43,9 @@ export function Showcase() {
             <div className="showcase-item__body">
               <h3>Bots Pharma — web &amp; assistant</h3>
               <p>
-                Contributed to the customer-facing experience for a premium raw
-                materials supplier. Built conversational automation (n8n +
-                Python) so visitors can get product guidance and routing without
-                waiting on a human for every question.
+                Built and styled frontend components/pages, including bilingual support English/Arabic.
+                Implemented an AI-powered chatbot widget using n8n, enabling automated visitor engagement,
+                and quote requests, and routing to the sales team directly from the site.
               </p>
               <a
                 className="link-arrow"
